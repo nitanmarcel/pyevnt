@@ -3,10 +3,13 @@ Events Changelog
 
 Here you can see the full list of changes between each Events release.
 
-In development
---------------
+Version 1.0
+-----------
 
-- hic sunt leones
+Released on April 8, 2023
+- Drop support for Python 3.5 and lower
+- Add support for coroutines
+- Rename project to pyevnt
 
 Version 0.4
 -----------

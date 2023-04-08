@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import inspect
 
 """
     Events
@@ -24,7 +25,9 @@ class _EventSlot:
 
     def __call__(self, *a, **kw):
         for f in tuple(self.targets):
-            f(*a, **kw)
+            _func = f(*a, **kw)
+        if inspect.isawaitable(_func):
+            return _func
 
     def __iadd__(self, f):
         self.targets.append(f)

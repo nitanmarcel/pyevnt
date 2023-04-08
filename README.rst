@@ -10,7 +10,7 @@ firing and feels like a "natural" part of the language.
 ::
  
     >>> def something_changed(reason): 
-    ...     print "something changed because %s" % reason 
+    ...     print("something changed because %s" % reason)
 
     >>> from events import Events
     >>> events = Events()
@@ -86,7 +86,7 @@ Just run:
 
     python setup.py test
 
-Or use tox to test the package under all supported Pythons: 2.7, 3.4+
+Or use tox to test the package under all supported Pythons: 3.6+
 
 Licensing
 ----------

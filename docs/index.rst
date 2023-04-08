@@ -9,7 +9,7 @@ lower protocol layers need to inform upper layers of incoming data and the
 like. Here is a handy class that encapsulates the core to event subscription
 and event firing and feels like a "natural" part of the language.
 
-The package has been tested under Python 2.6, 2.7, 3.3 and 3.4.
+The package has been tested under Python 3.6 and above.
 
 Usage
 =====
@@ -19,7 +19,7 @@ handlers) can be attached to - a process referred to as subscribing to an
 event. To subscribe to an event: ::
 
     >>> def something_changed(reason):
-    ...     print "something changed because %s" % reason
+    ...     print("something changed because %s" % reason)
     ...
 
     >>> from events import Events
@@ -82,54 +82,54 @@ subscription based on method name patterns. ::
 
     >>> from events import Events
     >>> events = Events()
-    >>> print events
+    >>> print(events)
     <events.events.Events object at 0x104e5d5f0>
 
     >>> def changed():
-    ...     print "something changed"
+    ...     print("something changed")
     ...
 
     >>> def another_one():
-    ...     print "something changed here too"
+    ...     print("something changed here too")
     ...
 
     >>> def deleted():
-    ...     print "something got deleted!"
+    ...     print("something got deleted!")
     ...
 
     >>> events.on_change += changed
     >>> events.on_change += another_one
     >>> events.on_delete += deleted
 
-    >>> print len(events)
+    >>> print(len(events))
     2
 
     >>> for event in events:
-    ...     print event.__name__
+    ...     print(event.__name__)
     ...
     on_change
     on_delete
 
     >>> event = events.on_change
-    >>> print event
+    >>> print(event)
     event 'on_change'
 
-    >>> print len(event)
+    >>> print(len(event))
     2
 
     >>> for handler in event:
-    ...     print handler.__name__
+    ...     print(handler.__name__)
     ...
     changed
     another_one
 
-    >>> print event[0]
+    >>> print(event[0])
     <function changed at 0x104e5c230>
 
-    >>> print event[0].__name__
+    >>> print(event[0].__name__)
     changed
 
-    >>> print len(events.on_delete)
+    >>> print(len(events.on_delete))
     1
 
     >>> events.on_change()
@@ -195,7 +195,7 @@ Just run: ::
 
     python setup.py test
 
-The package has been tested under Python 2.6, Python 2.7 and Python 3.3.
+The package has been tested under Python 3.6.
 
 Source Code
 ===========
